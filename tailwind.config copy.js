@@ -1,15 +1,3 @@
-// para dar mais legibildidade ao código, essa função irá receber a cor em 'rgb' e retornar essa cor com a função a baixo, assim nçao tendo que aplicar esse mesmo código várias vezes e poluindo o código
-
-function toRgba(cssVariable) {
-  const color = `var(${cssVariable})`;
-  return () =>
-    ({ opacityValue }) =>
-      `rgba(${color}), ${opacityValue} <alpha-value>) `;
-
-  // ao invés de fazer assim, criamos a variavél color para simplificar a legibilidade
-  // return () =>({ opacityValue }) => `rgba(var(--cssVariable), ${opacityValue})`;
-}
-
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
@@ -28,18 +16,16 @@ module.exports = {
       tv: 'var(--screen-tv)',
     },
     spacing: {
-      // valores t-shirt size
-      none: 'var(--spacing-none) /* 0px */',
+      'none': 'var(--spacing-none) /* 0px */',
       '4xs': 'var(--spacing-4xs) /* 8px */',
       '2xs': 'var(--spacing-2xs) /* 12px */',
-      xs: 'var(--spacing-xs) /* 16px */',
-      sm: 'var(--spacing-sm) /* 20px */',
-      md: 'var(--spacing-md) /* 24px */',
-      lg: 'var(--spacing-lg) /* 32px */',
-      xl: 'var(--spacing-xl) /* 40px */',
+      'xs': 'var(--spacing-xs) /* 16px */',
+      'sm': 'var(--spacing-sm) /* 20px */',
+      'md': 'var(--spacing-md) /* 24px */',
+      'lg': 'var(--spacing-lg) /* 32px */',
+      'xl': 'var(--spacing-xl) /* 40px */',
       '2xl': 'var(--spacing-2xl) /* 48px */',
       '4xl': 'var(--spacing-4xl) /* 56px */',
-      // valores numerais
       0: 'var(--spacing-none) /* 0px */',
       1: 'var(--spacing-4xs) /* 8px */',
       2: 'var(--spacing-2xs) /* 12px */',
@@ -58,11 +44,8 @@ module.exports = {
       lg: 'var(--font-lg)',
       xl: 'var(--font-xl)',
     },
-    // assim as cores padrões do tailwind iram prevalescer, e não serão sobrescrevidas
     extend: {
       colors: {
-        // ao invés de passar as cores aqui, ele pegará as variáveis css de finidas em 'global.css'
-        // E para todas as cores definidas, passamos essa 'opacidadeValue' para que seja possivel aplicar a opacidade quando necessário
         primary: 'rgba(var(--primary), <alpha-value>)',
         secondary: 'rgba(var(--secondary), <alpha-value>)',
         tertiary: 'rgba(var(--tertiary), <alpha-value>)',
@@ -72,17 +55,6 @@ module.exports = {
         icon: 'rgba(var(--icon), <alpha-value>)',
         outline: 'rgba(var(--outline), <alpha-value>)',
         divider: 'rgba(var(--divider), <alpha-value>)',
-        /*
-          primary: toRgba('--primary'),
-          secondary: toRgba('--secondary'),
-          tertiary: toRgba('--tertiary'),
-          quaternary: toRgba('--quaternary'),
-          hover: toRgba('--hover'),
-          click: toRgba('--click'),
-          icon: toRgba('--icon'),
-          outline: toRgba('--outline'),
-          divider: toRgba('--divider'),
-        */
       },
       backgroundColor: {
         light: 'rgba(var(--bg-light), <alpha-value>)',
@@ -117,4 +89,4 @@ module.exports = {
     },
   },
   plugins: [],
-};
+}

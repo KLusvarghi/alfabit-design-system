@@ -1,0 +1,46 @@
+import { Meta, Controls, Primary, Canvas } from '@storybook/blocks'
+
+import * as Story from './Button.stories.ts' //arquivo que fará referencia
+
+<Meta of={Story} />
+
+# Botão
+
+This is a button component
+{/* está é a parte vida do storybook */}
+
+
+{/* e ele pede para ter uma referencia do story ue tem a variação que queremos exibir (violet) */}
+  {/* sendo o "story" a referencia que importamos de './Button.stories.ts' e a variação "Violet"*/}
+{/* <Canvas of={Story.Violet}/> */}
+
+{/* neles não podemos aplicar os controls */}
+### Primário
+<Canvas of={Story.Primary}/>
+
+### Desabilitado
+<Canvas of={Story.Disabled}/>
+
+### Secundáio
+<Canvas of={Story.Secundary}/>
+
+### Secundáio Desabilitado
+<Canvas of={Story.SecundaryDisabled}/>
+
+### Tema Violeta
+<Canvas of={Story.Violet}/>
+
+### Tema Violeta Secundáio
+<Canvas of={Story.VioletSecundary}/>
+
+### Documentação Interativa
+
+{/* então se a gente deixar o primary perto dos controls, ele ficará perto dos controls lá no storybook */}
+
+{/* o Primary renderiza, na tela do Storyboot, um componente de um formato padrão. */}
+  {/* e dentro do "primary" ele apenas pega o botão sem variação nenhuma, e eu quero a variação "violet", para isso temos que pegar o "canvas" */}
+<Primary/>
+
+{/* ele coloca todas as propriedades que estão variando dentro do storie. Também conseguimos mudar o nome do botão no campo localizado no canto direito da tela. */}
+{/* modificando o <Primary/> em especifico */}
+<Controls/>
