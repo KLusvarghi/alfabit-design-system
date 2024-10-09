@@ -1,0 +1,27 @@
+import { Meta, Primary, Canvas, Controls } from "@storybook/blocks";
+
+import * as Story from './TextBlock.stories.ts'
+
+<Meta of={Story}/>
+
+# Text block 
+
+Este é um componente de Bloco de texto.
+
+### Text Box Primary Primary
+
+{/* layout="centered" serve para centralizar o stories no centro da página */}
+<Canvas of={Story.TextBlockPrimary} layout="centered"/>
+
+### Text Box Secondary
+
+<Canvas of={Story.TextBlockSecondary} layout="centered"/>
+
+### Text Box Tertiary
+
+<Canvas of={Story.TextBlockTertiary} layout="centered"/>
+
+## Documentação Interativa
+
+<Primary/>
+<Controls/>

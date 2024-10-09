@@ -18,8 +18,8 @@ const textVariants = cva('text-gray-primary text-sm font-normal', {
       title2: 'text-tlg',
       title3: 'text-tmd',
     },
+    // caso não seja passado nenhum valor este será o valor por padrão
     defaultVariants: {
-      // caso não seja passado nenhum valor este será o valor por padrão
       variant: 'primary',
       size: 'md',
     },
@@ -41,8 +41,8 @@ const Typography = ({
   const Element = element as any; // para que p Typescript pare de reclamar dizemos que ele pode ser any
   return (
     <Element
-      // faremos a interpolação da função textVariants(), que receberá como parâmetro o rest, ou seja, o restante das propriedades que recebemos e que estão ocultas que são as propriedades variant e size por exemplo.
-      className={`${textVariants( )} ${className}`} {...rest}
+      // faremos a interpolação da função textVariants(), que receberá como parâmetro o rest, ou seja, o restante das propriedades que recebemos e que estão ocultas que são as propriedades variant e size por exemplo, assim já setando os valores.
+      className={`${textVariants(rest)} ${className}`} {...rest}
     >
       {children}
     </Element>
