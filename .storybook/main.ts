@@ -16,6 +16,6 @@ const config: StorybookConfig = {
     name: "@storybook/nextjs",
     options: {},
   },
-  staticDirs: ["..\\public"],
+  staticDirs: ["..\\public"], // por padrão ele já veio com o staticDirs, que é onde está localizado a pasta que contem nosso arquivos staticos, como a logo
 };
 export default config;
