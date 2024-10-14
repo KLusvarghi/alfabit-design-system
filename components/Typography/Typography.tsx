@@ -42,7 +42,8 @@ const Typography = ({
   return (
     <Element
       // faremos a interpolação da função textVariants(), que receberá como parâmetro o rest, ou seja, o restante das propriedades que recebemos e que estão ocultas que são as propriedades variant e size por exemplo, assim já setando os valores.
-      className={`${textVariants(rest)} ${className}`} {...rest}
+      className={`${textVariants(rest)} ${className}`}
+      {...rest}
     >
       {children}
     </Element>
